@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { User } from '../types';
 import Icon from '../components/Icon';
@@ -6,15 +7,25 @@ interface LobbyScreenProps {
   user: User;
   onEnterRoom: () => void;
   onLogout: () => void;
+  onInstall: () => void;
+  installPromptEvent: any;
 }
 
-const LobbyScreen: React.FC<LobbyScreenProps> = ({ user, onEnterRoom, onLogout }) => {
+const LobbyScreen: React.FC<LobbyScreenProps> = ({ user, onEnterRoom, onLogout, onInstall, installPromptEvent }) => {
   const [roomCode, setRoomCode] = useState('');
   const [showCreatedCode, setShowCreatedCode] = useState(false);
   const generatedCode = React.useMemo(() => Math.random().toString(36).substring(2, 8).toUpperCase(), []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-full bg-gray-800 p-4">
+    <div className="flex flex-col items-center justify-center h-full bg-gray-800 p-4 relative">
+       <div className="absolute top-4 left-4">
+        {installPromptEvent && (
+            <button onClick={onInstall} className="bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                <Icon icon="fa-download" className="mr-2" />
+                Instalar App
+            </button>
+        )}
+      </div>
        <div className="absolute top-4 right-4">
         <button onClick={onLogout} className="text-gray-400 hover:text-white transition">
             <Icon icon="fa-right-from-bracket" className="mr-2" />
