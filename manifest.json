@@ -1,0 +1,21 @@
+{
+  "short_name": "AmigoCord",
+  "name": "AmigoCord - Converse com seus Amigos",
+  "description": "Uma aplicação de chat e vídeo inspirada no Discord, onde você pode criar ou entrar em salas para conversar com seus amigos por texto, voz e vídeo, além de compartilhar sua tela.",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2f3136",
+  "background_color": "#202225"
+}
