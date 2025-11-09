@@ -10,9 +10,11 @@ interface ChannelPanelProps {
   onSelectChannel: (channel: Channel) => void;
   user: User;
   onLeaveRoom: () => void;
+  onInstall: () => void;
+  installPromptEvent: any;
 }
 
-const ChannelPanel: React.FC<ChannelPanelProps> = ({ channels, activeChannel, onSelectChannel, user, onLeaveRoom }) => {
+const ChannelPanel: React.FC<ChannelPanelProps> = ({ channels, activeChannel, onSelectChannel, user, onLeaveRoom, onInstall, installPromptEvent }) => {
   return (
     <div className="w-64 bg-gray-800 flex flex-col">
         <header className="h-12 px-4 shadow-lg flex items-center">
@@ -46,6 +48,11 @@ const ChannelPanel: React.FC<ChannelPanelProps> = ({ channels, activeChannel, on
                 ))}
             </div>
         </div>
+        {installPromptEvent && (
+            <button onClick={onInstall} className='text-sm text-cyan-400 hover:bg-cyan-900/50 py-2 transition-colors w-full'>
+                <Icon icon="fa-download" className='mr-2' /> Instalar App
+            </button>
+        )}
         <button onClick={onLeaveRoom} className='text-sm text-red-400 hover:bg-red-900/50 py-2 transition-colors'>
             <Icon icon="fa-arrow-right-from-bracket" className='mr-2' /> Sair da Sala
         </button>

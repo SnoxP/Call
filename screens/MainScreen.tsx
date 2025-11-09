@@ -8,9 +8,11 @@ import CallPanel from '../components/CallPanel';
 interface MainScreenProps {
   user: User;
   onLeaveRoom: () => void;
+  onInstall: () => void;
+  installPromptEvent: any;
 }
 
-const MainScreen: React.FC<MainScreenProps> = ({ user, onLeaveRoom }) => {
+const MainScreen: React.FC<MainScreenProps> = ({ user, onLeaveRoom, onInstall, installPromptEvent }) => {
   const channels: Channel[] = useMemo(() => [
     { id: 'general', name: 'geral', type: 'text' },
     { id: 'random', name: 'aleatório', type: 'text' },
@@ -42,6 +44,8 @@ const MainScreen: React.FC<MainScreenProps> = ({ user, onLeaveRoom }) => {
         onSelectChannel={handleSelectChannel}
         user={user}
         onLeaveRoom={onLeaveRoom}
+        onInstall={onInstall}
+        installPromptEvent={installPromptEvent}
       />
       {renderMainPanel()}
     </div>

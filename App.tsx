@@ -72,9 +72,9 @@ const App: React.FC = () => {
       case AppState.LOGIN:
         return <LoginScreen onLogin={handleLogin} />;
       case AppState.LOBBY:
-        return user && <LobbyScreen user={user} onEnterRoom={handleEnterRoom} onLogout={handleLogout} onInstall={handleInstall} installPromptEvent={installPromptEvent}/>;
+        return user && <LobbyScreen user={user} onEnterRoom={handleEnterRoom} onLogout={handleLogout} />;
       case AppState.IN_APP:
-        return user && <MainScreen user={user} onLeaveRoom={handleLeaveRoom} />;
+        return user && <MainScreen user={user} onLeaveRoom={handleLeaveRoom} onInstall={handleInstall} installPromptEvent={installPromptEvent} />;
       default:
         return <LoginScreen onLogin={handleLogin} />;
     }
