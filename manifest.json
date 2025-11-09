@@ -4,14 +4,11 @@
   "description": "Uma aplicação de chat e vídeo inspirada no Discord, onde você pode criar ou entrar em salas para conversar com seus amigos por texto, voz e vídeo, além de compartilhar sua tela.",
   "icons": [
     {
-      "src": "/icon-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "/icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIiBmaWxsPSIjNGRhYmY3Ij48cGF0aCBkPSJNMTkyIDI1NmM2MS45IDAgMTEyLTUwLjEgMTEyLTExMlMyNTMuOSAzMiAxOTIgMzIgODAgODIgOCAwIDE0NHM1MC4xIDExMiAxMTIgMTEyem03Ni44IDMyaC04LjNjLTIwLjggMTAtNDMuOSAxNi02OC41IDE2cy00Ny42LTYtNjguNS0xNmgtOC4zQzUxLjYgMjg4IDAgMzM5LjYgMCA0MDMuMlY0MzJjMCAyNi41IDIxLjUgNDggNDggNDhoMjg4YzI2LjUgMCA0OC0yMS41IDQ4LTQ4di0yOC44YzAtNjMuNi01MS42LTExNS4yLTExNS4yLTExNS4yem00ODAgMjU2YzUzIDAgOTYtNDMgOTYtOTZzLTQzLTk2LTk2LTk2LTk2IDQzLTk2IDk2IDQzIDk2IDk2IDk2em00OCAzMmgtMy44Yy0xMy45IDQuOC0yOC42IDgtNDQuMiA4cy0zMC4zLTMuMi00NC4yLThINDMyYy0yMC40IDAtMzkuMiA1Ljk
+tNTUuNyAxNS40IDI0LjQgMjYuMyAzOS43IDYxLjIgMzkuNyA5OS44djM4LjRjMCAyLjItLjUgNC4zLS42IDYuNEg1OTJjMjYuNSAwIDQ4LTIxLjUgNDgtNDh2LTI4LjhjMC02My42LTUxLjYtMTE1LjItMTE1LjItMTE1LjJ6Ii8+PC9zdmc+",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
