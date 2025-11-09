@@ -2,7 +2,8 @@ const CACHE_NAME = 'amigocord-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/index.tsx'
+  '/index.tsx',
+  '/manifest.json'
 ];
 
 self.addEventListener('install', event => {
