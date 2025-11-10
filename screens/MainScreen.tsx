@@ -4,6 +4,7 @@ import ServerSidebar from '../components/ServerSidebar';
 import ChannelPanel from '../components/ChannelPanel';
 import ChatPanel from '../components/ChatPanel';
 import CallPanel from '../components/CallPanel';
+import SettingsModal from '../components/SettingsModal';
 
 interface MainScreenProps {
   user: User;
@@ -20,6 +21,7 @@ const MainScreen: React.FC<MainScreenProps> = ({ user, onLeaveRoom, onInstall, i
   ], []);
 
   const [activeChannel, setActiveChannel] = useState<Channel>(channels[0]);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const handleSelectChannel = (channel: Channel) => {
     setActiveChannel(channel);
@@ -36,19 +38,23 @@ const MainScreen: React.FC<MainScreenProps> = ({ user, onLeaveRoom, onInstall, i
   };
 
   return (
-    <div className="flex h-screen">
-      <ServerSidebar />
-      <ChannelPanel 
-        channels={channels}
-        activeChannel={activeChannel}
-        onSelectChannel={handleSelectChannel}
-        user={user}
-        onLeaveRoom={onLeaveRoom}
-        onInstall={onInstall}
-        installPromptEvent={installPromptEvent}
-      />
-      {renderMainPanel()}
-    </div>
+    <>
+      <div className="flex h-screen">
+        <ServerSidebar />
+        <ChannelPanel 
+          channels={channels}
+          activeChannel={activeChannel}
+          onSelectChannel={handleSelectChannel}
+          user={user}
+          onLeaveRoom={onLeaveRoom}
+          onInstall={onInstall}
+          installPromptEvent={installPromptEvent}
+          onOpenSettings={() => setIsSettingsOpen(true)}
+        />
+        {renderMainPanel()}
+      </div>
+      <SettingsModal isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
+    </>
   );
 };
 

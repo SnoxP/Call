@@ -1,4 +1,4 @@
-const CACHE_NAME = 'amigocord-cache-v1';
+const CACHE_NAME = 'meu-novo-app-pwa-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -19,6 +19,7 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(response => {
+        // Cache hit - return response
         if (response) {
           return response;
         }

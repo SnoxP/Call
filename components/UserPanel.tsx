@@ -4,9 +4,10 @@ import Icon from './Icon';
 
 interface UserPanelProps {
   user: User;
+  onOpenSettings: () => void;
 }
 
-const UserPanel: React.FC<UserPanelProps> = ({ user }) => {
+const UserPanel: React.FC<UserPanelProps> = ({ user, onOpenSettings }) => {
   return (
     <div className="h-14 bg-gray-800 px-2 flex items-center justify-between">
       <div className="flex items-center">
@@ -24,7 +25,7 @@ const UserPanel: React.FC<UserPanelProps> = ({ user }) => {
       <div className="flex items-center space-x-2 text-gray-400">
         <button className="hover:bg-gray-700 w-8 h-8 rounded-md flex items-center justify-center transition"><Icon icon="fa-microphone" /></button>
         <button className="hover:bg-gray-700 w-8 h-8 rounded-md flex items-center justify-center transition"><Icon icon="fa-headphones" /></button>
-        <button className="hover:bg-gray-700 w-8 h-8 rounded-md flex items-center justify-center transition"><Icon icon="fa-cog" /></button>
+        <button onClick={onOpenSettings} className="hover:bg-gray-700 w-8 h-8 rounded-md flex items-center justify-center transition"><Icon icon="fa-cog" /></button>
       </div>
     </div>
   );
