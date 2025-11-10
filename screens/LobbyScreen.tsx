@@ -42,7 +42,7 @@ const LobbyScreen: React.FC<LobbyScreenProps> = ({ user, onEnterRoom, onLogout }
                 ) : (
                     <button onClick={() => setShowCreatedCode(true)} className="w-full bg-cyan-600 hover:bg-cyan-500 font-bold py-2 px-4 rounded-md transition">
                         <Icon icon="fa-plus" className="mr-2" />
-                        Gerar Codigo
+                        Gerar Código
                     </button>
                 )}
             </div>

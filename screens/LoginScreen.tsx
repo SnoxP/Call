@@ -20,7 +20,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin }) => {
         <div className="w-full max-w-sm p-8 bg-gray-700 rounded-lg shadow-xl">
             <div className="text-center mb-8">
                 <Icon icon="fa-users" className="text-5xl text-cyan-400 mb-4" />
-                <h1 className="text-3xl font-bold text-white">Bem-vindo ao AmigoCord</h1>
+                <h1 className="text-3xl font-bold text-white">Bem-vindo ao FriendCord</h1>
                 <p className="text-gray-400">Seu espaço para conversar.</p>
             </div>
             <form onSubmit={handleSubmit}>
