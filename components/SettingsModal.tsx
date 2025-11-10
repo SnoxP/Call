@@ -4,9 +4,11 @@ import Icon from './Icon';
 interface SettingsModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onInstall: () => void;
+  installPromptEvent: any;
 }
 
-const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose }) => {
+const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, onInstall, installPromptEvent }) => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [notifications, setNotifications] = useState(true);
 
@@ -62,6 +64,20 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose }) => {
                     <Select label="Dispositivo de Saída (Alto-falante)" options={['Padrão - Alto-falantes (Realtek)', 'Headset (Logitech G432)']}/>
                     <Select label="Câmera" options={['Câmera Integrada', 'Logitech C920']}/>
                 </div>
+            </SettingRow>
+            
+            <SettingRow title="Aplicativo">
+                {installPromptEvent ? (
+                    <button 
+                        onClick={onInstall}
+                        className="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2 px-4 rounded-md transition duration-300 flex items-center justify-center"
+                    >
+                        <Icon icon="fa-download" className="mr-2" />
+                        Instalar FriendCord
+                    </button>
+                ) : (
+                    <p className="text-gray-400 text-sm">O aplicativo já está instalado ou não pode ser instalado neste navegador.</p>
+                )}
             </SettingRow>
 
         </main>

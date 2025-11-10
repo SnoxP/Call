@@ -53,7 +53,12 @@ const MainScreen: React.FC<MainScreenProps> = ({ user, onLeaveRoom, onInstall, i
         />
         {renderMainPanel()}
       </div>
-      <SettingsModal isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
+      <SettingsModal 
+        isOpen={isSettingsOpen} 
+        onClose={() => setIsSettingsOpen(false)}
+        onInstall={onInstall}
+        installPromptEvent={installPromptEvent}
+      />
     </>
   );
 };
