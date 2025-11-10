@@ -68,15 +68,36 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, onInstal
             
             <SettingRow title="Aplicativo">
                 {installPromptEvent ? (
-                    <button 
-                        onClick={onInstall}
-                        className="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2 px-4 rounded-md transition duration-300 flex items-center justify-center"
-                    >
-                        <Icon icon="fa-download" className="mr-2" />
-                        Instalar FriendCord
-                    </button>
+                    <div>
+                        <p className="text-gray-400 text-sm mb-3">Tenha a melhor experiência instalando o FriendCord no seu dispositivo.</p>
+                        <button 
+                            onClick={onInstall}
+                            className="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2 px-4 rounded-md transition duration-300 flex items-center justify-center"
+                        >
+                            <Icon icon="fa-download" className="mr-2" />
+                            Instalar FriendCord
+                        </button>
+                    </div>
                 ) : (
-                    <p className="text-gray-400 text-sm">O aplicativo já está instalado ou não pode ser instalado neste navegador.</p>
+                    <div>
+                        <p className="text-gray-400 text-sm mb-4">O aplicativo pode já estar instalado ou seu navegador não oferece um atalho de instalação direta. Você ainda pode instalá-lo manualmente:</p>
+                        <div className="bg-gray-900 p-4 rounded-lg space-y-3">
+                            <div className="flex items-start">
+                                <Icon icon="fa-desktop" className="text-cyan-400 mt-1 mr-3 w-5 text-center" />
+                                <div>
+                                    <strong className="text-white">No Computador:</strong>
+                                    <p className="text-gray-300 text-sm">Procure no menu do seu navegador (geralmente <Icon icon="fa-ellipsis-vertical"/>) pela opção "Instalar FriendCord" ou "Adicionar à área de trabalho...".</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start">
+                                <Icon icon="fa-mobile-alt" className="text-cyan-400 mt-1 mr-3 w-5 text-center" />
+                                <div>
+                                    <strong className="text-white">No Celular:</strong>
+                                    <p className="text-gray-300 text-sm">Use a opção "Adicionar à Tela de Início" no menu de compartilhamento (<Icon icon="fa-arrow-up-from-bracket"/>) do seu navegador.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 )}
             </SettingRow>
 
